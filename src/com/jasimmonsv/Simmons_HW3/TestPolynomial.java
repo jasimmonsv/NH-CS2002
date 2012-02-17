@@ -39,7 +39,7 @@ public class TestPolynomial {
 			System.out.println(coeffStr);
 			e.printStackTrace();
 		}
-		if (coeffStr.equalsIgnoreCase("t"))System.exit(0);
+		if (coeffStr.equalsIgnoreCase("x"))System.exit(0);
 		coeff = Integer.valueOf(coeffStr);
 		System.out.println("\nEnter in the exponent integer of the next term: ");
 		try {
