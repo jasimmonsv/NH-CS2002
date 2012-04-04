@@ -1,4 +1,4 @@
-package com.jasimmonsv.Simmons_HW5;
+package Simmons_HW5;
 
 import java.util.EmptyStackException;
 
@@ -13,11 +13,14 @@ import java.util.EmptyStackException;
 public class TestArrayStack2 {
 	
 	public static void main(String[] args){
-		ArrayStack2 test1 = new ArrayStack2();
-		ArrayStack2 test2 = new ArrayStack2();
 		int[] testData1 = {1,2,3,4,5,6,7,8,9,10};
 		int[] testData2 = {11,12,13,14,15,16,17,18,19,20};
 		int[] testData3 = {21,22,23,24,25,26,27,28,29,30};
+		char[] alphaData1 = {'a','b','c','d','e','f','g','h','i','j'};
+		char[] alphaData2 = {'k','l','m','n','o','p','q','r','s','t'};
+		ArrayStack2 test1 = new ArrayStack2();
+		ArrayStack2 test2 = new ArrayStack2();
+		
 	//empty
 		System.out.println("    <Empty function>");
 		System.out.println("Expecting true=> "+test1.empty());
@@ -36,6 +39,7 @@ public class TestArrayStack2 {
 		System.out.print("Pushing...");
 		for (int i = 0;i<10;i++){
 			System.out.print(testData1[i]+", ");test1.push(testData1[i]);
+			test2.push(alphaData1[i]);
 		}
 		System.out.println("\nExpecting false=> "+test1.empty());
 	//peek
@@ -57,10 +61,23 @@ public class TestArrayStack2 {
 		}catch(ArrayIndexOutOfBoundsException e){
 			System.out.println("Caught error: "+ e);
 		}//end catch
-		//print entire stack
+		try{
+			for (int i = 0;i<10;i++){
+				test2.push(alphaData2[i]);
+			}//end for
+		}catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("Caught error: "+ e);
+		}//end catch
+	//print entire stack
 		System.out.println("\nPrinting entire stack:");
 		try{
 			while(true)System.out.print(test1.pop()+" ");
+		}catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("End of Stack");
+		}//end catch
+		System.out.println("\nPrinting Alpha stack:");
+		try{
+			while(true)System.out.print(test2.pop()+" ");
 		}catch(ArrayIndexOutOfBoundsException e){
 			System.out.println("End of Stack");
 		}//end catch

@@ -1,4 +1,4 @@
-package com.jasimmonsv.Simmons_HW5;
+package Simmons_HW5;
 
 import java.util.Stack;
 

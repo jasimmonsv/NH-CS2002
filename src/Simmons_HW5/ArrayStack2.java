@@ -1,5 +1,5 @@
 /*<listing chapter="3" section="3">*/
-package com.jasimmonsv.Simmons_HW5;
+package Simmons_HW5;
 
 import java.util.EmptyStackException;
 
@@ -7,7 +7,7 @@ import java.util.EmptyStackException;
  *  an array.
  *  @author Koffman & Wolfgang
  */
-public class ArrayStack<E> implements StackInt<E> {
+public class ArrayStack2<E> implements StackInt<E> {
 
     // Data Fields
     /** Storage for stack. */
@@ -20,7 +20,7 @@ public class ArrayStack<E> implements StackInt<E> {
      * Construct an empty stack with the default
      * initial capacity.
      */
-    public ArrayStack() {
+    public ArrayStack2() {
         theData = (E[]) new Object[INITIAL_CAPACITY];
     }
 
@@ -59,18 +59,24 @@ public class ArrayStack<E> implements StackInt<E> {
 
 	@Override
 	public E peek() {
-		// TODO Auto-generated method stub
-		return null;
+		if (empty()) {
+            throw new EmptyStackException();
+        }
+        return theData[topOfStack];
 	}
 
 	@Override
 	public boolean empty() {
-		// TODO Auto-generated method stub
+		if (theData[0]==null)return true;
 		return false;
 	}
 	
 	public void reallocate(){
-		//TODO write reallocate method
+		E[] theOldData = theData;
+		theData = (E[]) new Object[theOldData.length+10];
+		for (int i =0;i<theOldData.length;i++){
+			theData[i] = theOldData[i];
+		}		
 	}//end method reallocate
 
 // Insert solution to programming exercise 2, section 3, chapter 3 here
