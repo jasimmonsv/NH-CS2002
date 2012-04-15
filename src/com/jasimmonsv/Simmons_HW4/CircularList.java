@@ -1,8 +1,4 @@
 package com.jasimmonsv.Simmons_HW4;
-import java.util.AbstractSequentialList;
-import java.util.Iterator;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
 
 /**
  * Implements a simple circular list, as per pp 102-3 of text
