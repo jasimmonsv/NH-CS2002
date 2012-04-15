@@ -1,6 +1,6 @@
 package com.jasimmonsv.Simmons_HW3;
 
-public class Term implements Comparable {
+public class Term implements Comparable<Object> {
 
 	
 	public int coefficient;
