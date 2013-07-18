@@ -15,6 +15,7 @@ public class ArrayStack2<E> implements StackInt<E> {
     /** Index to top of stack. */
     int topOfStack = -1; // Initially empty stack.
     private static final int INITIAL_CAPACITY = 10;
+    protected static int CAPACITY = 10;
 
     /**
      * Construct an empty stack with the default
@@ -22,6 +23,7 @@ public class ArrayStack2<E> implements StackInt<E> {
      */
     public ArrayStack2() {
         theData = (E[]) new Object[INITIAL_CAPACITY];
+        CAPACITY = 10;
     }
 
     /**
@@ -74,6 +76,7 @@ public class ArrayStack2<E> implements StackInt<E> {
 	public void reallocate(){
 		E[] theOldData = theData;
 		theData = (E[]) new Object[theOldData.length+10];
+		CAPACITY = CAPACITY+10;
 		for (int i =0;i<theOldData.length;i++){
 			theData[i] = theOldData[i];
 		}		
